@@ -18,15 +18,15 @@
     <div id="app">
         <div class="container mt-5">
 
+            <input type="text" placeholder="Scrivi nuova attività" v-model="task" v-on:keyup.enter="addTask">
+            <button @click="addTask"> Aggiungi </button>
+
             <ul>
-                <li v-for="(element, i) in activities" :class="(element.done === true) ? 'strikeText' : '' ">
+                <li v-for="(element, i) in activities" :class="(element.done === true) ? 'strikeText' : '' "
+                    @click="changeStatus(i)">
                     {{activities[i].text}} <i class="bi bi-x-circle-fill" @click="deleteTask(i)"></i>
                 </li>
             </ul>
-
-
-
-
         </div>
     </div>
 

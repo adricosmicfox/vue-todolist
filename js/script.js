@@ -44,14 +44,27 @@ const app = new Vue({
                 text: "chiamare amministratore di condominio",
                 done: false,
             },
+        ],
 
-        ]
+        task: "",
     },
     methods: {
         deleteTask: function (i) {
             this.activities.splice(i, 1)
-        }
+        },
+
+        addTask: function () {
+            let newTask = {
+                text: this.task,
+                done: false,
+            }
+
+            this.activities.push(newTask),
+                this.task = ""
+        },
+
+        changeStatus: function (i) {
+            this.activities[i].done = !this.activities[i].done
+        },
     }
-
-
 })
