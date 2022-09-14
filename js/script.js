@@ -18,9 +18,10 @@
 const app = new Vue({
     el: "#app",
     data: {
+        index: 0,
         activities: [
             {
-                text: "comprare il latte",
+                text: "comprare la polenta",
                 done: true,
             },
 
@@ -30,7 +31,7 @@ const app = new Vue({
             },
 
             {
-                text: "prendere appuntamento con barbiere",
+                text: "prendere appuntamento con il barbiere",
                 done: true,
             },
 
@@ -45,6 +46,12 @@ const app = new Vue({
             },
 
         ]
+    },
+    methods: {
+        deleteTask: function (i) {
+            this.activities.splice(i, 1)
+        }
     }
+
 
 })

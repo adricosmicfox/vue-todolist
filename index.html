@@ -16,8 +16,13 @@
 
 <body>
     <div id="app">
-        <div class="container">
+        <div class="container mt-5">
 
+            <ul>
+                <li v-for="(element, i) in activities" :class="(element.done === true) ? 'strikeText' : '' ">
+                    {{activities[i].text}} <i class="bi bi-x-circle-fill" @click="deleteTask(i)"></i>
+                </li>
+            </ul>
 
 
 
